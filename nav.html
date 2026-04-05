@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>网络服务导航</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #1a1a2e; color: #e0e0e0; min-height: 100vh; padding: 40px 20px; }
+h1 { text-align: center; color: #fff; font-size: 28px; margin-bottom: 8px; }
+.subtitle { text-align: center; color: #888; font-size: 13px; margin-bottom: 40px; }
+.section { max-width: 900px; margin: 0 auto 40px; }
+.section-title { color: #7ec8e3; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; border-left: 3px solid #7ec8e3; padding-left: 10px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.card { background: #16213e; border-radius: 10px; padding: 18px 20px; text-decoration: none; color: #e0e0e0; transition: all 0.2s; border: 1px solid #1e3054; display: block; }
+.card:hover { background: #1a2a50; border-color: #7ec8e3; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(126,200,227,0.1); }
+.card-name { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+.card-name .tag { font-size: 11px; background: #7ec8e3; color: #1a1a2e; padding: 1px 6px; border-radius: 4px; margin-left: 6px; font-weight: 700; }
+.card-domain { font-size: 12px; color: #7ec8e3; margin-bottom: 4px; word-break: break-all; }
+.card-port { font-size: 11px; color: #666; }
+.card .port-tag { display: inline-block; background: #0f3460; color: #a0a0a0; padding: 2px 8px; border-radius: 4px; font-size: 11px; margin-top: 6px; }
+.card.status-ok { border-color: #2e7d32; }
+.card.status-ok .port-tag { background: #1b3d1b; color: #4caf50; }
+.card.status-warn { border-color: #f57c00; }
+.card.status-warn .port-tag { background: #3d2a0a; color: #ff9800; }
+.info-bar { max-width: 900px; margin: 0 auto 30px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.info-item { background: #16213e; padding: 10px 20px; border-radius: 8px; font-size: 12px; border: 1px solid #1e3054; }
+.info-item span { color: #7ec8e3; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<h1>🌐 网络服务导航</h1>
+<p class="subtitle">局域网 + NatFrp 外网访问入口</p>
+
+<div class="info-bar">
+  <div class="info-item">宿主机: <span>192.168.31.192</span></div>
+  <div class="info-item">Docker: <span>172.19.0.2</span></div>
+  <div class="info-item">Gateway: <span>172.19.0.1:18788</span></div>
+</div>
+
+<div class="section">
+<div class="section-title">🌍 NatFrp 外网隧道</div>
+<div class="grid">
+
+<a class="card" href="https://nas.u2463609.nyat.app:55396" target="_blank">
+  <div class="card-name">fnos<span class="tag">TCP</span></div>
+  <div class="card-domain">nas.u2463609.nyat.app</div>
+  <div class="card-port">55396 · 江苏徐州双线PLUS2</div>
+  <div class="port-tag">内网 192.168.31.192:5667</div>
+</a>
+
+<a class="card" href="https://www.u2463609.nyat.app:39098" target="_blank">
+  <div class="card-name">filebrowser<span class="tag">TCP</span></div>
+  <div class="card-domain">www.u2463609.nyat.app</div>
+  <div class="card-port">39098 · 浙江三线PLUS4</div>
+  <div class="port-tag">内网 192.168.31.192:8080</div>
+</a>
+
+<a class="card" href="https://my.u2463609.nyat.app:64279" target="_blank">
+  <div class="card-name">longxia（龙虾）<span class="tag">TCP</span></div>
+  <div class="card-domain">my.u2463609.nyat.app</div>
+  <div class="card-port">64279 · 浙江三线PLUS5</div>
+  <div class="port-tag">内网 192.168.31.192:38150</div>
+</a>
+
+<a class="card" href="https://db.u2463609.nyat.app:34015" target="_blank">
+  <div class="card-name">pansou（mao）<span class="tag">TCP</span></div>
+  <div class="card-domain">db.u2463609.nyat.app</div>
+  <div class="card-port">34015 · 浙江三线PLUS4</div>
+  <div class="port-tag">内网 192.168.31.192:12280</div>
+</a>
+
+<a class="card" href="https://www-video.u2463609.nyat.app:56087" target="_blank">
+  <div class="card-name">MoviePilot<span class="tag">TCP</span></div>
+  <div class="card-domain">www-video.u2463609.nyat.app</div>
+  <div class="card-port">56087 · 浙江三线PLUS4</div>
+  <div class="port-tag">内网 192.168.31.192:3001</div>
+</a>
+
+<a class="card" href="https://mc.u2463609.nyat.app:41826" target="_blank">
+  <div class="card-name">nacidrom<span class="tag">TCP</span></div>
+  <div class="card-domain">mc.u2463609.nyat.app</div>
+  <div class="card-port">41826 · 浙江三线PLUS4</div>
+  <div class="port-tag">内网 192.168.31.192:4533</div>
+</a>
+
+<a class="card" href="http://frp-fan.com:51466" target="_blank">
+  <div class="card-name">nav<span class="tag">UDP</span></div>
+  <div class="card-domain">frp-fan.com</div>
+  <div class="card-port">51466 · 浙江三线PLUS5 · UDP</div>
+  <div class="port-tag">内网 192.168.31.192:4533</div>
+</a>
+
+<a class="card" href="https://www-my.u2463609.nyat.app:11159" target="_blank">
+  <div class="card-name">nextcloud（kod）<span class="tag">TCP</span></div>
+  <div class="card-domain">www-my.u2463609.nyat.app</div>
+  <div class="card-port">11159 · 浙江三线PLUS4</div>
+  <div class="port-tag">内网 192.168.31.192:8082</div>
+</a>
+
+<a class="card" href="http://frp-try.com:53989" target="_blank">
+  <div class="card-name">tststs（ts）<span class="tag">UDP</span></div>
+  <div class="card-domain">frp-try.com</div>
+  <div class="card-port">53989 · 浙江三线PLUS6 · UDP</div>
+  <div class="port-tag">内网 192.168.31.192:9987</div>
+</a>
+
+</div>
+</div>
+
+<div class="section">
+<div class="section-title">🖥️ 宿主机内网服务（局域网访问）</div>
+<div class="grid">
+
+<a class="card" href="http://192.168.31.192:8000" target="_blank">
+  <div class="card-name">飞牛 fnOS</div>
+  <div class="card-port">8000 · HTTP</div>
+  <div class="port-tag">Web UI</div>
+</a>
+
+<a class="card" href="http://192.168.31.192:8080" target="_blank">
+  <div class="card-name">个人云盘</div>
+  <div class="card-port">8080 · HTTP</div>
+  <div class="port-tag">文件管理</div>
+</a>
+
+<a class="card" href="http://192.168.31.192:8082" target="_blank">
+  <div class="card-name">Nextcloud</div>
+  <div class="card-port">8082 · HTTP</div>
+  <div class="port-tag">网盘</div>
+</a>
+
+<a class="card" href="http://192.168.31.192:8085" target="_blank">
+  <div class="card-name">qBittorrent</div>
+  <div class="card-port">8085 · HTTP</div>
+  <div class="port-tag">下载</div>
+</a>
+
+<a class="card" href="http://192.168.31.192:8097" target="_blank">
+  <div class="card-name">Jellyfin</div>
+  <div class="card-port">8097 · HTTP</div>
+  <div class="port-tag">媒体服务器</div>
+</a>
+
+<a class="card" href="http://192.168.31.192:8123" target="_blank">
+  <div class="card-name">Home Assistant</div>
+  <div class="card-port">8123 · HTTP</div>
+  <div class="port-tag">智能家居</div>
+</a>
+
+<a class="card" href="http://192.168.31.192:9000" target="_blank">
+  <div class="card-name">Portainer</div>
+  <div class="card-port">9000 · HTTP</div>
+  <div class="port-tag">Docker 管理</div>
+</a>
+
+<a class="card" href="http://192.168.31.192:22" target="_blank">
+  <div class="card-name">SSH</div>
+  <div class="card-port">22 · TCP</div>
+  <div class="port-tag">终端</div>
+</a>
+
+</div>
+</div>
+
+</body>
+</html>
